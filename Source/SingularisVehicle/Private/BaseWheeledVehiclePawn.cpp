@@ -217,7 +217,7 @@ void ABaseWheeledVehiclePawn::ResetVehicle([[maybe_unused]] const FInputActionVa
 
 void ABaseWheeledVehiclePawn::SetVehicleMovementParameters() const
 {
-	// 注意：以下代码为虚幻引擎5 Chaos车辆物理系统的C++配置，用于定义车辆的物理行为
+	/*// 注意：以下代码为虚幻引擎5 Chaos车辆物理系统的C++配置，用于定义车辆的物理行为
 
 	// ==================== 底盘设置 ====================
 	ChaosVehicleMovement->ChassisHeight = 144.0f; // 底盘离地高度（单位：厘米），影响车辆重心和稳定性
@@ -227,7 +227,7 @@ void ABaseWheeledVehiclePawn::SetVehicleMovementParameters() const
 	ChaosVehicleMovement->bLegacyWheelFrictionPosition = true; // 启用旧版车轮摩擦力计算方式（兼容性选项）
 	ChaosVehicleMovement->WheelSetups.SetNum(4); // 定义车辆有4个车轮
 
-	/*// 前轮-左 (索引0)
+	/#1#/ 前轮-左 (索引0)
 	ChaosVehicleMovement->WheelSetups[0].WheelClass = UVehicleSportsWheelFront::StaticClass(); // 使用前轮物理类（含摩擦、悬挂等参数）
 	ChaosVehicleMovement->WheelSetups[0].BoneName = FName("Phys_Wheel_FL"); // 绑定到骨骼"Phys_Wheel_FL"（左前轮）
 	ChaosVehicleMovement->WheelSetups[0].AdditionalOffset = FVector(0.0f, 0.0f, 0.0f); // 车轮位置微调（此处无偏移）
@@ -245,7 +245,7 @@ void ABaseWheeledVehiclePawn::SetVehicleMovementParameters() const
 	// 后轮-右 (索引3)
 	ChaosVehicleMovement->WheelSetups[3].WheelClass = UVehicleSportsWheelRear::StaticClass(); // 后轮物理类
 	ChaosVehicleMovement->WheelSetups[3].BoneName = FName("Phys_Wheel_BR"); // 骨骼"Phys_Wheel_BR"（右后轮）
-	ChaosVehicleMovement->WheelSetups[3].AdditionalOffset = FVector(0.0f, 0.0f, 0.0f); // 无偏移*/
+	ChaosVehicleMovement->WheelSetups[3].AdditionalOffset = FVector(0.0f, 0.0f, 0.0f); // 无偏移#1#
 
 	// ==================== 引擎设置 ====================
 	// 注意：扭矩曲线需在蓝图中定义（控制不同转速下的扭矩输出）
@@ -280,7 +280,7 @@ void ABaseWheeledVehiclePawn::SetVehicleMovementParameters() const
 	// ==================== 转向设置 ====================
 	// 注意：转向曲线需在蓝图中定义（控制转向角度随车速变化）
 	ChaosVehicleMovement->SteeringSetup.SteeringType = ESteeringType::Ackermann; // 阿克曼转向几何（优化过弯）
-	ChaosVehicleMovement->SteeringSetup.AngleRatio = 0.7f; // 转向角度比率（0.0-1.0），值越小转向越平缓
+	ChaosVehicleMovement->SteeringSetup.AngleRatio = 0.7f; // 转向角度比率（0.0-1.0），值越小转向越平缓*/
 }
 
 #undef LOCTEXT_NAMESPACE
